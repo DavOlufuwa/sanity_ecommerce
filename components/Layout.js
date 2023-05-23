@@ -1,10 +1,11 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Layout = ({children}) => {
   return (
     <div>
       <header className='bg-red-500 p-6'>
-        <h1 className='text-2xl'>MAZON-SANITY</h1>
+        <Link  href="/" className='text-2xl'>MAZON-SANITY</Link>
         <nav></nav>  
       </header>
       <main>
