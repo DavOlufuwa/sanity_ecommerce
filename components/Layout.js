@@ -1,4 +1,5 @@
 import Cookies from 'js-cookie'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import React, { useContext, useEffect } from 'react'
 import { Store } from '../utils/Store'
@@ -11,8 +12,8 @@ const Layout = ({children}) => {
   
   const darkModeChanger = ()=>{
     dispatch({type: darkMode ? 'DARK_MODE_OFF' : 'DARK_MODE_ON'})
-    const newDarkMode = !darkMode
-    Cookies.set('darkMode', newDarkMode ? 'ON': 'OFF')
+    const newDarkMode = darkMode
+    Cookies.set('darkMode', newDarkMode ? 'OFF': 'ON')
   }
   return (
     <div>
@@ -35,7 +36,7 @@ const Layout = ({children}) => {
         </div>
       </footer>
     </div>
-  )
+  ) 
 }
 
 export default Layout

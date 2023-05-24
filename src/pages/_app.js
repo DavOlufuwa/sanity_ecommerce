@@ -1,7 +1,11 @@
 import '@/styles/globals.css'
+import dynamic from 'next/dynamic'
 import { ToastContainer } from 'react-toastify'
-import Layout from '../../components/Layout'
 import { StoreProvider } from '../../utils/Store'
+
+const Layout = dynamic(()=> import('../../components/Layout'), {
+  ssr: false
+})
 
 export default function App({ Component, pageProps }) {
   return (
